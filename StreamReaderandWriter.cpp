@@ -32,4 +32,24 @@ int main()
 
     // membuka file dalam mode baca
     ifstream infile;
+    // menunjukan ke sebuah file
+    infile.open("contohfile.txt");
+
+    cout << endl
+         << ">= membuka dan membaca file " << endl;
+    // kondisi jika file ada
+    if (infile.is_open())
+    {
+        // perulangan untuk memunculkan setiap baris
+        while (getline(infile, baris))
+        {
+            cout << baris << endl;
+        }
+        // menutup file setelah pembacaan selesai
+        infile.close();
+    }
+    // kondisi jika file tidak ada
+    else
+        cout << "Unable to open file";
+    return 0;
 }
